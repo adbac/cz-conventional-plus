@@ -35,10 +35,28 @@ jobs:
         run: |
           git reset --hard ${{ github.sha }}
 
-      - name: Setup | Install Poetry
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.0
+
+      - name: Install poetry
         run: |
-          curl -sSL https://install.python-poetry.org | python3 -
-          export PATH="$HOME/.local/bin:$PATH"
+          python -m pip install poetry
+
+      - name: Configure poetry
+        run: |
+          python -m poetry config virtualenvs.in-project true
+
+      - name: Cache the virtualenv
+        uses: actions/cache@v2
+        with:
+          path: ./.venv
+          key: ${{ runner.os }}-venv-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies
+        run: |
+          python -m poetry install
 
       - name: Action | Semantic Version Release
         id: release
@@ -69,6 +87,7 @@ jobs:
   pypi-publish:
     name: Upload release to PyPI
     runs-on: ubuntu-latest
+    needs: release
     environment:
       name: pypi
       url: https://pypi.org/p/cz-conventional-plus
