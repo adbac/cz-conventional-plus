@@ -35,6 +35,11 @@ jobs:
         run: |
           git reset --hard ${{ github.sha }}
 
+      - name: Setup | Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          export PATH="$HOME/.local/bin:$PATH"
+
       - name: Action | Semantic Version Release
         id: release
         # Adjust tag with desired version if applicable.
