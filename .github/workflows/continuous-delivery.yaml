@@ -36,9 +36,9 @@ jobs:
           git reset --hard ${{ github.sha }}
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.10.0
+          python-version: "3.10.0"
 
       - name: Install poetry
         run: |
