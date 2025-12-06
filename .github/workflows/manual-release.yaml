@@ -1,9 +1,7 @@
-name: Continuous Delivery
+name: Manual Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 # default: least privileged permissions across all jobs
 permissions:
