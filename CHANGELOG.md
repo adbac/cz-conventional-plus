@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.2 (2025-12-06)
+
+### Bug Fixes
+
+- Trigger new release and deployment
+  ([`1b3a364`](https://github.com/adbac/cz-conventional-plus/commit/1b3a36432c9a46ced183acb010ccf91305bfd0e2))
+
+
 ## v1.0.1 (2025-12-06)
 
 ### Bug Fixes
