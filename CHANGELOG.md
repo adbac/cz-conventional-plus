@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.3 (2025-12-07)
+
+### Bug Fixes
+
+- **build**: Install poetry inside the build command used in the github action
+  ([`8e51750`](https://github.com/adbac/cz-conventional-plus/commit/8e51750ebed5ec1d7755e28d104274fa31375cf7))
+
+
 ## v1.0.2 (2025-12-06)
 
 ### Bug Fixes

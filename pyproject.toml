@@ -18,7 +18,7 @@ Issues = "https://github.com/adbac/cz-conventional-plus/issues"
 
 [tool.poetry]
 packages = [{ include = "cz_conventional_plus", from = "src" }]
-version = "1.0.2"
+version = "1.0.3"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
