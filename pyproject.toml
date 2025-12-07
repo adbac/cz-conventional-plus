@@ -35,7 +35,7 @@ dev = [
 [tool.semantic_release]
 version_toml = ["pyproject.toml:tool.poetry.version"]
 commit_parser = "conventional"
-build_command = "poetry build"
+build_command = "pip install poetry && poetry build"
 upload_to_pypi = false
 upload_to_release = true
 branch = "main"
